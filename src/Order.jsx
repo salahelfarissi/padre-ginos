@@ -88,19 +88,19 @@ const Order = () => {
             </div>
           </div>
           <button type="submit">Add to Cart</button>
+        </div>
+        {loading ? (
+          <h1>Loading pizza lol</h1>
+        ) : (
           <div className="order-pizza">
-            {loading ? (
-              <h1>Loading pizza lol</h1>
-            ) : (
-              <Pizza
-                name={selectedPizza.name}
-                description={selectedPizza.description}
-                image={selectedPizza.image}
-              />
-            )}
+            <Pizza
+              name={selectedPizza.name}
+              description={selectedPizza.description}
+              image={selectedPizza.image}
+            />
             <p>{price}</p>
           </div>
-        </div>
+        )}
       </form>
     </div>
   );
